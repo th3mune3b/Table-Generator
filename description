@@ -1,0 +1,38 @@
+# Table Generator
+
+A simple and responsive Table Generator built using **HTML**, **Tailwind CSS**, and **JavaScript**.
+
+## Features
+
+* Generate multiplication tables from 1 to 10
+* Clean and modern dark-themed UI
+* Responsive design for desktop and mobile devices
+* Input validation for empty values
+* Fast and interactive user experience
+* Styled using Tailwind CSS
+
+## Technologies Used
+
+* HTML5
+* Tailwind CSS
+* JavaScript (ES6)
+
+## How It Works
+
+1. Enter a number in the input field.
+2. Click the **Generate Table** button.
+3. The multiplication table for the entered number will be displayed instantly.
+
+## Project Purpose
+
+This project was created to practice JavaScript fundamentals, including:
+
+* DOM Manipulation
+* Event Handling
+* Loops (`for`)
+* Conditional Statements (`if`)
+* User Input Validation
+
+## Author
+
+Muneeb Zafar
