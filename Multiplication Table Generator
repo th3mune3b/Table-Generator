@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .mono-font {
+            font-family: 'Fira Code', monospace;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-slate-900/90 border border-slate-800 w-full max-w-md p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
+
+        <div class="text-center space-y-1">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white">Table Generator</h1>
+            <p class="text-xs text-slate-400">Enter a number to generate its table</p>
+        </div>
+
+        <div class="space-y-2">
+            <label for="table"
+                class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Number</label>
+            <input type="number" id="table" placeholder="Enter number..."
+                class="w-full bg-slate-800 border border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white rounded-2xl px-4 py-3 outline-none text-sm font-semibold transition-all">
+        </div>
+
+        <button
+            class="Generate-table w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-4 rounded-2xl transition-all transform active:scale-[0.98] shadow-lg shadow-indigo-600/30">
+            Generate Table
+        </button>
+
+        <p
+            class="Table hidden mono-font bg-slate-950 border border-slate-800 text-emerald-400 text-sm p-5 rounded-2xl leading-relaxed shadow-inner max-h-80 overflow-y-auto block">
+        </p>
+
+    </div>
+
+    <script>
+        let table = document.querySelector(".Table");
+        let generateTable = document.querySelector(".Generate-table");
+
+        generateTable.addEventListener("click", () => {
+            let tableNumber = document.querySelector("#table").value;
+            table.innerHTML = ""
+            if (!tableNumber) {
+                alert("please enter Table Number");
+                return;
+            }
+            for (let i = 1; i <= 10; i++) {
+                if (tableNumber < 0) {
+                    return;
+                }
+                table.innerHTML += `${tableNumber} x ${i} = ${tableNumber * i}<br>`
+            }
+            table.classList.remove("hidden");
+        })
+    </script>
+</body>
+
+</html>
